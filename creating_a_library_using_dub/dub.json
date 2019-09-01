@@ -1,0 +1,28 @@
+{
+	"name": "example",
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"targetType": "executable",
+	"dependencies": {
+		"example:mylib": "*"
+	},
+	"subPackages": [
+		{
+			"name": "mylib",
+			"targetType": "library",
+			"sourcePaths": [
+				"mylib"
+			],
+			"importPaths": [
+				"mylib"
+			],
+			"excludedSourceFiles": [
+				"app.d"
+			]
+		}
+	],
+	"description": "A minimal example of how to create a library using dub.",
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"license": "MIT"
+}

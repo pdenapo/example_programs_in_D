@@ -1,0 +1,23 @@
+{
+	"name": "luca",
+	"configurations": [
+	{
+	  "name": "app",
+	  "targetType": "executable",
+	  "dependencies":{
+	    "luca:luca-lib":"*"
+	  },
+	  "subPackages":[
+	  {[
+	    "name": "luca-lib",
+	   "targetType": "library",
+	   "sourcePaths":["my_lib"],
+	   "excludedSourceFiles": ["app.d"]
+	}],
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"license": "proprietary"
+}
