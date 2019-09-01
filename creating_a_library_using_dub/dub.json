@@ -16,9 +16,6 @@
 			],
 			"importPaths": [
 				"mylib"
-			],
-			"excludedSourceFiles": [
-				"app.d"
 			]
 		}
 	],
