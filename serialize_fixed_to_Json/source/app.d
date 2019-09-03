@@ -8,9 +8,6 @@ struct MyClass
   int int_data;
   string string_data;
   bool boolean_data;
-  // you can mark some fields in your structure as optional
-  // so that they are not requiered to appear in your Json data
-  @optional int optional_data;
 }
 
 void main()
