@@ -1,0 +1,9 @@
+[submodule "serialize_fixed_to_Json/serialize_fixed_to_Json/fixed"]
+	path = serialize_fixed_to_Json/serialize_fixed_to_Json/fixed
+	url = https://github.com/pdenapo/fixed.git
+[submodule "serialize_fixed_to_Json/fixed"]
+	path = serialize_fixed_to_Json/fixed
+	url = https://github.com/pdenapo/fixed.git
+[submodule "fixed"]
+	path = fixed
+	url = https://github.com/pdenapo/fixed.git
