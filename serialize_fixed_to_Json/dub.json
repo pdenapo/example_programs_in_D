@@ -1,0 +1,16 @@
+{
+	"name": "test-json-fixed",
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"dependencies": {
+		"vibe-d:data": "~>0.8.5",
+		"test-json-fixed:fixed": "*"
+	},
+	"subPackages" : [  
+		 "../fixed"		 
+		],
+	"description": "Testing my version of fixed for vibe serialization",
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"license": "MIT"
+}
