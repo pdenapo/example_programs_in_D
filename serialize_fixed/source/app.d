@@ -38,4 +38,10 @@ void main()
 	// Let's check that our data are there...
 	writeln("string_data=",my_object.string_data);
 	writeln("fixed_data=",my_object.fixed_data);
+	
+	// We can also use it the other way round (to generate json data
+	// from a struct or class)
+	MyStruct other_data= MyStruct("hola",Fixed!2(3.5));
+	Json other_json = serializeToJson(other_data);
+	writeln(other_json);
 }
