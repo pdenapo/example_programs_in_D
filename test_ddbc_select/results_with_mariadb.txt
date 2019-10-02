@@ -1,0 +1,19 @@
+2019-10-02T08:01:38.791 [trace] mysqlddbc.d:426:executeUpdate SET autocommit=1
+2019-10-02T08:01:38.834 [trace] mysqlddbc.d:426:executeUpdate DROP TABLE IF EXISTS test;
+2019-10-02T08:01:38.989 [trace] mysqlddbc.d:426:executeUpdate  
+  CREATE TABLE test ( name VARCHAR(10) PRIMARY KEY NOT NULL, surname VARCHAR(10) );
+2019-10-02T08:01:39.140 [trace] mysqlddbc.d:426:executeUpdate INSERT INTO test VALUES('John','Smith');
+2019-10-02T08:01:39.165 [trace] mysqlddbc.d:408:executeQuery SELECT * FROM test WHERE name = 'John';
+ddbc.core.SQLException@../../../.dub/packages/ddbc-0.5.0/ddbc/source/ddbc/drivers/mysqlddbc.d(850): No current row in result set
+----------------
+/usr/include/dmd/phobos/std/exception.d:515 void std.exception.bailOut!(ddbc.core.SQLException).bailOut(immutable(char)[], ulong, scope const(char)[]) [0x55b660009321]
+/usr/include/dmd/phobos/std/exception.d:436 bool std.exception.enforce!(ddbc.core.SQLException).enforce!(bool).enforce(bool, lazy const(char)[], immutable(char)[], ulong) [0x55b6600092a2]
+../../../.dub/packages/ddbc-0.5.0/ddbc/source/ddbc/drivers/mysqlddbc.d:850 std.variant.VariantN!(32uL).VariantN ddbc.drivers.mysqlddbc.MySQLResultSet.getValue(int) [0x55b66000e5b3]
+../../../.dub/packages/ddbc-0.5.0/ddbc/source/ddbc/drivers/mysqlddbc.d:1123 immutable(char)[] ddbc.drivers.mysqlddbc.MySQLResultSet.getString(int) [0x55b660010b9f]
+source/app.d:32 immutable(char)[] app.get_data_without_next() [0x55b65fffd147]
+source/app.d:72 _Dmain [0x55b65fffd28f]
+Warning (thread: main): leaking eventcore driver because there are still active handles
+   FD 6 (streamSocket)
+Warning (thread: main): leaking eventcore driver because there are still active handles
+   FD 6 (streamSocket)
+get_data_without_next method

@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"dependencies": {
+		"ddbc": "~>0.5.0"
+	},
+	"description": "ddbc - test SELECT",
+	"license": "MIT",
+	"name": "test-ddbc"
+}
