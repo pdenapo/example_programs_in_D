@@ -1,0 +1,8 @@
+2019-10-02T11:41:05.253 [trace] sqliteddbc.d:472:executeUpdate DROP TABLE IF EXISTS test;
+2019-10-02T11:41:05.332 [trace] sqliteddbc.d:472:executeUpdate  
+  CREATE TABLE test ( name VARCHAR(10) PRIMARY KEY NOT NULL, surname VARCHAR(10) );
+2019-10-02T11:41:05.384 [trace] sqliteddbc.d:472:executeUpdate INSERT INTO test VALUES('John','Smith');
+2019-10-02T11:41:05.436 [trace] sqliteddbc.d:452:executeQuery SELECT * FROM test WHERE name = 'John';
+Test using a separated createStatement for each sql statament
+get_data_with_next method
+result with next=Smith
