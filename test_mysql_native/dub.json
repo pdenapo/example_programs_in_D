@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"dependencies": {
+		"mysql-native": "~>2.3.0"
+	},
+	"description": "A test for mysql-native",
+	"license": "MIT",
+	"name": "test_mysql_native"
+}

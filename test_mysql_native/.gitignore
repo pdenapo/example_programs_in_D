@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/test_mysql_native
+test_mysql_native.so
+test_mysql_native.dylib
+test_mysql_native.dll
+test_mysql_native.a
+test_mysql_native.lib
+test_mysql_native-test-*
+*.exe
+*.o
+*.obj
+*.lst
