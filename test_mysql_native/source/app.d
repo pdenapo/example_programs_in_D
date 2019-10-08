@@ -26,7 +26,7 @@ void main(string[] args)
 	ResultRange range = conn.query("SELECT * FROM test WHERE name = 'John';");
 	Row row = range.front;
 	writeln("name=",row[0]);
-	writeln("surname",row[1]);
+	writeln("surname=",row[1]);
 }
 	
 
