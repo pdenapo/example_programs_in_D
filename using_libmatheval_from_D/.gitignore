@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/libmathevald
+libmathevald.so
+libmathevald.dylib
+libmathevald.dll
+libmathevald.a
+libmathevald.lib
+libmathevald-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -1,0 +1,10 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Nápoli",
+	"description": "example using GNU matheval from D",
+	"license": "GPL-3",
+	"name": "libmathevald",
+	"libs": ["libmatheval"]
+}
