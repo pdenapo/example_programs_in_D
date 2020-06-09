@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/date_manipulations
+date_manipulations.so
+date_manipulations.dylib
+date_manipulations.dll
+date_manipulations.a
+date_manipulations.lib
+date_manipulations-test-*
+*.exe
+*.o
+*.obj
+*.lst

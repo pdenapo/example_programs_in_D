@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Nápoli",
+	"description": "Examples of date manipulations in D",
+	"license": "MIT",
+	"name": "date_manipulations"
+}
