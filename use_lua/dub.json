@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Nápoli",
+	"dependencies": {
+		"luad": "~master"
+		},
+	"description": "A example program showing how to use Lua from D",
+	"license": "MIT",
+	"name": "use_lua",
+	"libs":["lua-5.1"]
+}
