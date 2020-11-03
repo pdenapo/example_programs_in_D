@@ -1,0 +1,20 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Nápoli",
+	"dependencies": {
+		"bindbc-lua": "~>0.1.0",
+		"readline": "~>0.2.0"
+	},
+	"subConfigurations": {
+		"bindbc-lua": "static"
+	},	
+	"description": "A example program showing how to use Lua from D",
+	"libs": [
+		"lua-5.1"
+	],
+	"license": "GPL-3",
+	"name": "lua_console",
+	"versions": ["LUA_51"]
+}
