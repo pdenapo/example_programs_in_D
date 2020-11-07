@@ -1,0 +1,16 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Nápoli",
+	"dependencies": {
+		"duktape": "*",
+		"readline": "~>0.2.0"
+	},	
+	"description": "A example program showing how to use Duketape from D",
+	"libs": [
+		"lua-5.1"
+	],
+	"license": "GPL-3",
+	"name": "duktape_console"
+}
