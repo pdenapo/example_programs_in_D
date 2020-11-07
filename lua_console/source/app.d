@@ -17,17 +17,9 @@ extern (C)
   void add_history (const char *);
 }
 
-// An example from LuaD documentation
-int printTimes(int times, const(char)[] message)
-{
-    for(int i = 0; i <= times; i++)
-        writeln(message);
-    return times;
-}
-
 void main()
 {
-	writeln("Lua console using LuaD y GNU Readline");
+	writeln("Lua console using bindc-lua y GNU Readline");
 	lua_State* L= luaL_newstate();
 	// cargamos las librerías estándard de Lua
 	luaL_openlibs(L);
