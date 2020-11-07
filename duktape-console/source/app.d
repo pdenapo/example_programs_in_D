@@ -2,11 +2,12 @@
 
 import std.stdio;
 import std.string;
+import std.conv;
 import core.stdc.stdio: printf;
+import core.memory;
 // The modules to use duketape
 import duktape;
-// This module contains the low-level C API
-// import etc.c.duktape;
+import duk_extras.print_alert;
 
 import gnu.readline;
 
@@ -22,6 +23,22 @@ static void print(string msg)
     writeln(msg);
 }
 
+/* An example for the duketaped documentation*/
+extern (C) duk_ret_t native_is_prime(duk_context *ctx) {
+    int val = duk_require_int(ctx, 0);
+    int i;
+
+    for (i = 2; i < val; i++) {
+        if (val % i == 0) {
+            duk_push_false(ctx); /* is not prime*/
+            return 1;
+        }
+    }
+
+    duk_push_true(ctx); /* is prime */
+    return 1;
+}
+
 int main()
 {
 	writeln("Duketape console using d-duktape y GNU Readline");
@@ -32,10 +49,26 @@ int main()
         return 1;
     }
 
-    scope(exit) duk_destroy_heap(ctx);
-	
+	// Make sure that it is not collected even if it is no
+	// longer referenced from D code (stack, GC heap, …).
+	GC.addRoot(cast(void*)ctx);
+
+	// Also ensure that a moving collector does not relocate
+	// the object.
+	GC.setAttr(cast(void*)ctx, GC.BlkAttr.NO_MOVE);
+
+    scope(exit) {
+		// This will be excecuted when we leave the context
+		duk_destroy_heap(ctx);
+		GC.removeRoot(ctx);
+    	GC.clrAttr(ctx, GC.BlkAttr.NO_MOVE);
+		}
+
     duk_push_global_object(ctx);
-    //duk_print_alert_init(ctx, 0);
+    duk_print_alert_init(ctx, 0);
+    duk_push_c_function(ctx, &native_is_prime, 1 /*nargs*/);
+    // We register a function in the global object to be used from javascript
+	duk_put_prop_string(ctx, -2, "is_prime");
 	
 	while (true) 
 	{
@@ -43,11 +76,17 @@ int main()
 		if (!line)
         	break; 	
 		add_history (line);
-		writeln("sigo vivo");
-		duk_eval_string(ctx, line);
-		writeln("sigo vivo 2");
-		//duk_get_int(ctx, -1);
-        //printf("=%d\n", cast(int) duk_get_int(ctx, -1));
+		int ret = duk_peval_string(ctx, line);
+
+        if (ret != 0) {
+            writeln("Error: " ~ duk_to_string(ctx, -1).to!string);
+        }
+        else {
+            if (!duk_is_undefined(ctx, -1))
+                writeln(duk_to_string(ctx, -1).to!string);
+        }
+        
+        duk_pop(ctx);
 
 	} /* end of while loop */
 
