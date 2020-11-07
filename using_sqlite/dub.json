@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2019, Pablo De Napoli",
+	"dependencies": {
+		"d2sqlite3": "~>0.19.1"
+	},
+	"description": "prueba d2sqlite3",
+	"license": "MIT",
+	"name": "using_sqlite"
+}
