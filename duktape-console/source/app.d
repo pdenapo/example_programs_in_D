@@ -53,7 +53,7 @@ static void push_file_as_string(duk_context *ctx, const char *filename) {
     if (f) {
         len =  getdelim(&buffer, &len, '\0',f);
         fclose(f);
-		printf("código leído: \n %s \n", buffer);
+		// printf("código leído: \n %s \n", buffer);
         duk_push_lstring(ctx, cast(const char *) buffer, cast(duk_size_t) len);
     } else {
         duk_push_undefined(ctx);
@@ -69,6 +69,7 @@ extern (C) duk_ret_t load(duk_context *ctx) {
      */
     printf("Script error: %s\n", duk_safe_to_string(ctx, -1));
 }
+	duk_pop(ctx);
 	duk_pop(ctx);
 	return 1;
 }
