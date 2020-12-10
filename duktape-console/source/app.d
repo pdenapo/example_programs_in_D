@@ -24,20 +24,57 @@ static void print(string msg)
 }
 
 /* An example for the duketaped documentation*/
-extern (C) duk_ret_t native_is_prime(duk_context *ctx) {
-    int val = duk_require_int(ctx, 0);
+/* A pure D function */
+bool is_prime(int val)
+{
     int i;
-
     for (i = 2; i < val; i++) {
         if (val % i == 0) {
-            duk_push_false(ctx); /* is not prime*/
-            return 1;
+            return false;
         }
     }
+	return true;
+}
 
-    duk_push_true(ctx); /* is prime */
+// This function does the interface between the D function is_prime and duktape
+
+extern (C) duk_ret_t is_prime_interface(duk_context *ctx) {
+    int val = duk_require_int(ctx, 0);
+    duk_push_boolean(ctx,is_prime(val));
     return 1;
 }
+
+static void push_file_as_string(duk_context *ctx, const char *filename) {
+    FILE *f;
+    size_t len;
+    char* buffer=null;
+
+    f = fopen(filename, "rb");
+    if (f) {
+        len =  getdelim(&buffer, &len, '\0',f);
+        fclose(f);
+		// printf("código leído: \n %s \n", buffer);
+        duk_push_lstring(ctx, cast(const char *) buffer, cast(duk_size_t) len);
+    } else {
+        duk_push_undefined(ctx);
+    }
+}
+
+extern (C) duk_ret_t load(duk_context *ctx) {
+    const(char)* file_name = duk_require_string(ctx, 0);
+	push_file_as_string(ctx, file_name);
+	if (duk_peval(ctx) != 0) {
+    /* Use duk_safe_to_string() to convert error into string.  This API
+     * call is guaranteed not to throw an error during the coercion.
+     */
+    printf("Script error: %s\n", duk_safe_to_string(ctx, -1));
+}
+	duk_pop(ctx);
+	duk_pop(ctx);
+	return 1;
+}
+
+
 
 int main()
 {
@@ -66,9 +103,11 @@ int main()
 
     duk_push_global_object(ctx);
     duk_print_alert_init(ctx, 0);
-    duk_push_c_function(ctx, &native_is_prime, 1 /*nargs*/);
+    duk_push_c_function(ctx, &is_prime_interface, 1 /*nargs*/);
     // We register a function in the global object to be used from javascript
 	duk_put_prop_string(ctx, -2, "is_prime");
+	duk_push_c_function(ctx, &load, 1 /*nargs*/);
+	duk_put_prop_string(ctx, -2, "load");
 	
 	while (true) 
 	{
