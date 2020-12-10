@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2020, Pablo De Napoli",
+	"description": "A minimal D application.",
+	"license": "MIT",
+	"name": "running_latex"
+}
