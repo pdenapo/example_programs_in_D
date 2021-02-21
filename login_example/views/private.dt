@@ -1,0 +1,10 @@
+doctype html
+html
+	head
+		title Login example - Private Area
+	body
+		p ¡Wellcome to #{nombre_del_programa} !
+		p #{descripcion}
+
+		li: a(href='logout') Log Out
+			
