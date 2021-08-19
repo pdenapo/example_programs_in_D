@@ -1,0 +1,36 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2021, Pablo De Nápoli",
+	"description": "Example programs using malloc",
+	"license": "MIT",
+	"name": "using-malloc",
+	"targetType": "none",
+	"dependencies": {
+		"using-malloc:v1": "*",
+		"using-malloc:v2": "*"
+	},
+	"subPackages": [
+		{
+			"name": "v1",
+			"targetType": "executable",
+			"sourcePaths": [
+				"v1"
+			],
+			"importPaths": [
+				"v1"
+			]
+		},
+		{
+			"name": "v2",
+			"targetType": "executable",
+			"sourcePaths": [
+				"v2"
+			],
+			"importPaths": [
+				"v2"
+			]
+		}
+	]
+}
