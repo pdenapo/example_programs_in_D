@@ -4,7 +4,7 @@ html
 		title D form submission example
 		link(rel='stylesheet', type='text/css', href='form_style.css')
 	body
-		form( method="post", action="/hello")
+		form( method="post", action="/login")
 			div
 				label(for='say') What greeting do you want to say?
 				input(name='say', id="say", value="Hi")

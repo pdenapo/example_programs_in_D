@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2021, Pablo De Nápoli",
+	"description": "Simulación del truco ",
+	"license": "MIT",
+	"name": "simulacion_truco"
+}

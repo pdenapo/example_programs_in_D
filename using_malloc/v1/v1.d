@@ -44,13 +44,19 @@ struct Prueba {
 
 }
 
+/* El prolema no es writeln cualquier otra función que usemos produce el mismo
+problema. Parece que la llamada involucra una construcción por copia. Las
+clases hacen mejor lo que queremos! */
+
+void probando(Prueba q)
+{
+  q.print();
+}
 
 void main()
 {
   writeln("version 1");
   Prueba p=Prueba("a");
-
-  string s=p.toString();
-  writeln("using writeln ",s);
-  p.print();
+  probando(p);
 }
+
