@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2021, Pablo De Napoli",
+	"dependencies": {
+		"vibe-d": "~>0.9.4-rc.5"
+	},
+	"description": "test using CORS in vibe",
+	"license": "MIT",
+	"name": "vibe_cors"
+}
