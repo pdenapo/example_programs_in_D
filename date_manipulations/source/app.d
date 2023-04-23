@@ -17,7 +17,7 @@ string fecha_como_string(Date d)
 {
   return format("%02d",d.day)~"/" ~
          format("%02d",d.month)~"/"~ 
-		 format("%04d",d.year);	
+         format("%04d",d.year);	
 }
 
 void main()

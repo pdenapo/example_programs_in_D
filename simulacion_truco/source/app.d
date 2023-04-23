@@ -1,8 +1,8 @@
 import std.stdio;
-import core.stdc.stdlib;
-import std.math.rounding;
+import std.random;
+import std.math;
 
-const cuantas_cartas =40;
+const cuantas_cartas =5;
 const long cuantas_veces=1;
 bool[cuantas_cartas] mazo;
 long[cuantas_cartas] veces_por_carta;
@@ -20,46 +20,48 @@ void main()
  
  int cartas_en_el_mazo=40;
  for (int k=0;k<cuantas_cartas;k++)
-	mazo[k]=false;
+	mazo[k]=true;
  int quedan_en_el_mazo=cuantas_cartas;
  
- for (int k=0;k<6;k++)
+ for (int i=0;i<6;i++)
  {
     
-	float random= cast(float) rand()/cast(float)(RAND_MAX);
-	int escalado=cast (int) floor(random*float(quedan_en_el_mazo));
+	writeln("i=",i);
+	writeln("mazo=",mazo);
+	double random= uniform01();
+	int escalado=cast(int) (random*quedan_en_el_mazo);
 	writeln("ecalado=",escalado);
-	int buscamos_carta= escalado;
+	int carta_disponible=0;
 	int carta_elegida;
 
-	for(int j=0;j<escalado;j++)
+	for(int j=0;j<cuantas_cartas;j++)
 	{
-	  if(!mazo[j])
+	  writeln("j=",j);
+	  if(mazo[j])
 	  {
-		writeln("j=",j," buscamos_carta=",buscamos_carta);
-		if (buscamos_carta==0)
+		writeln("carta_disponible=",carta_disponible);
+		if (carta_disponible==escalado)
 		{
+			write("elegimos la carta");
 			carta_elegida=j;
 			break;
 		}
 		else 
-			buscamos_carta--;  
+			carta_disponible++;
 	  }
-	  else 
-	  	continue;	
 	}
 
 	cartas_elegidas++;
 	writeln("carta_elegida=",carta_elegida);
 	veces_por_carta[carta_elegida]++;
-	mazo[carta_elegida]= true; /* la marcamos como elegida */
+	mazo[carta_elegida]= false; /* la marcamos como elegida */
 	quedan_en_el_mazo--;
 	
 	/*
 	mazo=mazo.remove!(carta => carta == carta_elegida);
 	//writeln("carta_elegida=",carta_elegida);
 	//writeln("mazo=",mazo);
-	switch (k)
+	switch (i)
 	{
 		case 0: jugador1[0]=carta_elegida;
 				break;

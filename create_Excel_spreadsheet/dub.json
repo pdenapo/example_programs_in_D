@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2023, Pablo De Napoli",
+	"dependencies": {
+		"xlsxd": "~>4.0.3"
+	},
+	"description": "Create an Excel spreadsheet using libxlsxd",
+	"license": "BSD-3",
+	"name": "create_excel_spreadsheet"
+}
