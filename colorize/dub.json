@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2023, Pablo De Nápoli",
+	"dependencies": {
+		"colorize": "~>1.0.5"
+	},
+	"description": "A test for the D library colorize",
+	"license": "MIT",
+	"name": "test-colorize"
+}
