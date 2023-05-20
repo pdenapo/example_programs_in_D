@@ -1,0 +1,22 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2023, Pablo De Nápoli",
+	"dependencies": {
+		"d_mpdecimal": "~>0.5.2",
+		"silly": "~>1.1.1"
+	},
+	"description": "A test for silly",
+	"license": "MIT",
+	"name": "test_silly",
+	"configurations": [
+			{
+				"name": "executable",
+				"targetType": "executable"
+			},
+			{
+				"name": "unittest"
+			}
+		]
+}
