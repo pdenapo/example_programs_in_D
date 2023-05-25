@@ -1,0 +1,22 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2023, Pablo De Nápoli",
+	"dependencies": {
+		"d_mpdecimal": "~>0.5.2",
+		"silly": "~>1.1.1"
+	},
+	"description": "Testing d-mpdecimal using sylly",
+	"license": "MIT",
+	"name": "normalize number",
+	"configurations": [
+			{
+				"name": "executable",
+				"targetType": "executable"
+			},
+			{
+				"name": "unittest"
+			}
+		]
+}

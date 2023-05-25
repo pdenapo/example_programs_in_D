@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "ls",
+	"description": "Example using the cvs reader",
+	"license": "MIT",
+	"name": "read_csv"
+}
