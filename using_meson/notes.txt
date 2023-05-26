@@ -1,2 +1,15 @@
 
 https://mesonbuild.com/D.html
+
+# if you want to choose a D compiler, default is gdc
+export DC=dmd
+
+meson setup build
+cd build
+ninja
+
+Meson dub support is broken at the moment.
+
+https://github.com/mesonbuild/meson/pull/11798/files
+
+https://github.com/mesonbuild/meson/blob/master/test%20cases/d/11%20dub/meson.build#L8
