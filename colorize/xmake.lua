@@ -4,6 +4,6 @@ add_requires("dub::colorize", {alias = "colorize"})
 
 target("test")
     set_kind("binary")
-    add_files("src/*.d")
+    add_files("source/*.d")
     add_packages("colorize")
 
