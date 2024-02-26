@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2024, Pablo De Nápoli",
+	"description": "The usual hello world program",
+	"license": "MIT",
+	"name": "hello"
+}

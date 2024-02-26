@@ -1,6 +1,6 @@
 import std.stdio;
 
-void print_primes(ulong limit)
+ulong print_primes(ulong limit)
 {
   ulong p=2;
   ulong count =1;
@@ -30,9 +30,10 @@ void print_primes(ulong limit)
     }
   }
 
-  writeln("primepi(",limit,")=",count);
+  return count;
 }
 
 void main() {
-  print_primes(100);
+  auto count = print_primes(100);
+  write("We have found ",count," primes.");
 }
