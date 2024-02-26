@@ -1,0 +1,10 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2024, Pablo De Nápoli",
+	"description": "Calling rust from D",
+	"license": "MIT",
+	"name": "calling_rust_from_d",
+	"lflags": ["./rust_library/target/release/librust_library.so"]
+}

@@ -10,6 +10,7 @@ So I keep here some examples for myself of how I managed to do some things, and 
 
 ## Interfaces with order languages
 
+* using_libmatheval_from_D: an example of calling a C library (libmatheval) from D.
 * call_D_library_from_bun: How to call a D library form the Bun (javascript).
 * use_lua: execute lua code form D.
 
