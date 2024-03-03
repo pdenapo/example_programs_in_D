@@ -3,12 +3,8 @@
 		"Pablo De Napoli"
 	],
 	"copyright": "Copyright © 2021, Pablo De Napoli",
-	"description": "Find prime numbers using d-mpdecimal",
+	"description": "Find prime numbers up to a given limit",
 	"license": "MIT",
 	"name": "example_primes",
-	"targetType": "executable",
-	"dependencies":
-	{
-	 "d_mpdecimal":"*"
-	}
+	"targetType": "executable"
 }
