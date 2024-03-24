@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2024, Pablo De Napoli",
+	"description": "Implementing hashing in D",
+	"license": "MIT",
+	"name": "hash"
+}
