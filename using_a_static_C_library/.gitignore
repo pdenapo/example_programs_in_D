@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/using_a_static_c_library
+using_a_static_c_library.so
+using_a_static_c_library.dylib
+using_a_static_c_library.dll
+using_a_static_c_library.a
+using_a_static_c_library.lib
+using_a_static_c_library-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
