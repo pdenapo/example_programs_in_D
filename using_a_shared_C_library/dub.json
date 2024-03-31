@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2024, Pablo De Nápoli",
+	"description": "Using a shared C library from D",
+	"license": "MIT",
+	"name": "using_a_shared_c_library",
+	"preBuildCommands": [
+		"cd ./C; ./create_shared_lib.sh"
+	],
+	"lflags": ["-L./C","-lmy_lib"]
+}
