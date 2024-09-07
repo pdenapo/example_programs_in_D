@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Pablo De Nápoli"
+	],
+	"copyright": "Copyright © 2024, Pablo De Nápoli",
+	"dependencies": {
+		"vibe-d:mongodb": "~>0.10.0"
+	},
+	"description": "Example using mongo-db with vibe-d",
+	"license": "MIT",
+	"name": "using_mongodb"
+}
