@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Pablo De Napoli"
+	],
+	"copyright": "Copyright © 2021, Pablo De Napoli",
+	"dependencies": {
+		"mustache-d": "~>0.1.5",
+		"vibe-d:web": "~>0.10.2"
+	},
+	"description": "Example of a web application using vibe-d",
+	"license": "MIT",
+	"name": "web_server"
+}
