@@ -4,15 +4,15 @@ import "core:c"
 import "core:fmt"
 import "core:strings"
 
-when ODIN_OS == .Windows do foreign import foo " mylib/libexample_mylib.a .lib"
-when ODIN_OS == .Linux do foreign import foo " mylib/libexample_mylib.a "
+//when ODIN_OS == .Windows do foreign import foo "libexample_mylib.lib"
+//when ODIN_OS == .Linux do foreign import foo "libexample_mylib.a "
 
-foreign foo {
+foreign {
 	hello_init :: proc() ---
 	say_hello :: proc() ---
 	square :: proc(x: c.int) -> c.int ---
 	greeting :: proc(name: cstring) -> cstring ---
-  create_account :: proc(id: i64, type: i32, balance: f64) -> Account ---
+  	create_account :: proc(id: i64, type: i32, balance: f64) -> Account ---
 	hello_terminate :: proc() ---
 }
 

@@ -1,5 +1,8 @@
-cd mylib
+pushd ${PWD}
+cd ../mylib
 dub build
-cd ..
-odin build . -extra-linker-flags:"-lphobos2 -pthread"
+LIBS=${PWD}
+popd
+echo ${PWD}
+odin build . -extra-linker-flags:"-L${LIBS} -lphobos2 -pthread -lexample_mylib"
 
