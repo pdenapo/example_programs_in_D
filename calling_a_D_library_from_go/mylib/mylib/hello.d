@@ -30,5 +30,5 @@ extern (C) int square(int x)
 
 extern (C) void hello_terminate()
 {
-  Runtime.initialize();
+  Runtime.terminate();
 }
